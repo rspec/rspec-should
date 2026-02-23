@@ -1,0 +1,23 @@
+name: RSpec CI
+
+on:
+  push:
+    branches:
+      - 'main'
+      - '*-maintenance'
+  pull_request:
+    branches:
+      - '*'
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    uses: ./.github/workflows/documentation_coverage.yml
+
+  rubocop:
+    uses: ./.github/workflows/rubocop.yml
+
+  specs:
+    uses: ./.github/workflows/rspec.yml

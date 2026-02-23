@@ -1,0 +1,13 @@
+set -e
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $SCRIPT_DIR/functions.sh
+
+echo "Set bundle path to .bundle/gems"
+bundle config set --local path '.bundle/gems'
+
+echo "bundle install --standalone"
+bundle install --standalone
+
+echo "bundle binstubs --all --standalone"
+bundle binstubs --all --standalone
