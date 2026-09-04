@@ -14,10 +14,10 @@ permissions:
 
 jobs:
   docs:
-    uses: ./.github/workflows/documentation_coverage.yml
+    uses: $/.github/workflows/documentation_coverage.yml
 
   rubocop:
-    uses: ./.github/workflows/rubocop.yml
+    uses: $/.github/workflows/rubocop.yml
 
   specs:
-    uses: ./.github/workflows/rspec.yml
+    uses: $/.github/workflows/rspec.yml
